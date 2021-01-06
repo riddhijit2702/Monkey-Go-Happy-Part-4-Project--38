@@ -37,7 +37,7 @@ function setup() {
    b1 = createSprite(300, 300)
   b1.addImage(bImage)
   b1.velocityX=-5- score / 10;
-  b1.scale=1.2;
+  b1.scale=1.5;
   monkey = createSprite(50, 500)
   monkey.addAnimation("walking", monkey_running)
   monkey.addAnimation("stopped", monkey_stopped)
@@ -45,6 +45,7 @@ function setup() {
  
   camera.y=monkey.y;
  camera.x=monkey.x
+ camera.zoom=0.6
   road = createSprite(10, 530, 1200, 10)
   road.visible=false;
 
@@ -56,7 +57,7 @@ function draw() {
 
 
   if (b1.x < 0) {
-    b1.x = b1.width / 2;
+    b1.x = b1.x=120;
   }
   monkey.collide(road);
 
@@ -148,7 +149,7 @@ function draw() {
   drawSprites();
   fill("black")
   textSize(25)
-  text("Score: " + score, 450, 50)
+  text("Score: " + score, 30,50)
 
 if(gameState===WIN){
   fill("red")
